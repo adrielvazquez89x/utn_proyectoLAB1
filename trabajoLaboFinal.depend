@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1697498279 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\main.cpp
+	<iostream>
+	<locale>
+	<ctime>
+	<cstdlib>
+	"estructuras.h"
+	"funciones.h"
+
+1697498138 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.h
+	<iostream>
+	"estructuras.h"
+
+1697493600 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.cpp
+	<iostream>
+	<locale>
+	"estructuras.h"
+	"funciones.h"
+
+1697326842 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\jugador.h
+	<string>
+
+1697498319 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesjugar.cpp
+	<iostream>
+	<locale>
+	"estructuras.h"
+	"funciones.h"
+
+1697493719 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\estructuras.h
+	<iostream>
+	<string>
+
+1697494248 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesrandom.cpp
+	<iostream>
+	"estructuras.h"
+	"funciones.h"
+
