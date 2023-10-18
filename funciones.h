@@ -1,20 +1,26 @@
 //#ifndef FUNCIONES_H_INCLUDED
 //#define FUNCIONES_H_INCLUDED
-//
-//// Aca van las declaraciones.
-//
 //#endif // FUNCIONES_H_INCLUDED
+#pragma once //guards
 
-#pragma once
-#include <iostream>
+#include<iostream>
 #include "estructuras.h"
 
-using namespace std;
+//ACA VAN LAS DECLARACIONES
 
+/// FUNCIONES DE MENU
 void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2);
 void manejarOpcion(int opcion, Jugador &j1, Jugador &j2);
+
+/// FUNCIONES DE INGRESO DE DATOS PRIMARIOS
 void nombresJugadores(Jugador &j1, Jugador &j2);
+
+///FUNCIONES RANDOM
 int generarNumero(int tamanio);
-void selecCartas(Jugador j1, Jugador j2, Carta arr[], Carta vMazoMano[]);
-void repartirCartas(Carta vMazoMano[], Jugador &jugador1, Jugador &jugador2);
+
+/// FUNCIONES JUGAR
+void repartirCartas(Jugador j1, Jugador j2, Carta arr[]);
 void mezclarMazo(Carta vArr[], int tam);
+void contadorRonda(Jugador j1, Jugador j2);
+
+//void repartirCartas(Carta vMazoMano[], Jugador jugador1, Jugador jugador2);

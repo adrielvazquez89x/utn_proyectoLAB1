@@ -1,37 +1,33 @@
 # depslib dependency file v1.0
-1697498279 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\main.cpp
+1697592862 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\main.cpp
 	<iostream>
 	<locale>
-	<ctime>
 	<cstdlib>
-	"estructuras.h"
+	<ctime>
 	"funciones.h"
+	"estructuras.h"
 
-1697498138 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.h
+1697597674 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.h
 	<iostream>
 	"estructuras.h"
 
-1697493600 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.cpp
+1697597674 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.cpp
 	<iostream>
 	<locale>
-	"estructuras.h"
 	"funciones.h"
+	"estructuras.h"
 
 1697326842 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\jugador.h
 	<string>
 
-1697498319 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesjugar.cpp
+1697592637 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesjugar.cpp
 	<iostream>
-	<locale>
-	"estructuras.h"
 	"funciones.h"
-
-1697493719 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\estructuras.h
-	<iostream>
-	<string>
-
-1697494248 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesrandom.cpp
-	<iostream>
 	"estructuras.h"
+
+1697592637 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\estructuras.h
+
+1697592637 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesrandom.cpp
 	"funciones.h"
+	"estructuras.h"
 

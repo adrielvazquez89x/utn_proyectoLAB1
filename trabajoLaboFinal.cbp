@@ -37,7 +37,6 @@
 		<Unit filename="funciones.h" />
 		<Unit filename="funcionesJugar.cpp" />
 		<Unit filename="funcionesRandom.cpp" />
-		<Unit filename="jugador.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
