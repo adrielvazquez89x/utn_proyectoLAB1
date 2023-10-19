@@ -110,55 +110,6 @@ void contadorRonda(Jugador j1, Jugador j2)
 
 }
 
-int elegirOrden(Jugador j1, Jugador j2)
-{
-    string valores[CARTAS_CORRAL] = {"A", "K", "Q", "J", "10"};
-    int contadores1[CARTAS_CORRAL] = {}; // indice [0] = A, [1] = K, [2] = Q, etc...
-    int contadores2[CARTAS_CORRAL] = {};
-
-    // contar cada carta jugador 1
-    for (int x = 0; x < CARTAS_CORRAL; x++)
-    {
-        for (int y = 0; y < CARTAS_CORRAL; y++)
-        {
-            if (j1.corral[y].valor == valores[x])
-            {
-                contadores1[x]++;
-            }
-        }
-
-    }
-    // contar cada carta jugador 2
-    for (int x = 0; x < CARTAS_CORRAL; x++)
-    {
-        for (int y = 0; y < CARTAS_CORRAL; y++)
-        {
-            if (j2.corral[y].valor == valores[x])
-            {
-                contadores2[x]++;
-            }
-        }
-
-    }
-
-    // comparar
-
-    for (int x = 0; x < CARTAS_CORRAL; x++)
-    {
-        if (contadores1[x] > contadores2[x])
-        {
-            return 1;
-        }
-        else if (contadores1[x] < contadores2[x])
-        {
-            return 2;
-        }
-
-    }
-    return 900;
-}
-
-
 
 
 

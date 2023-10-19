@@ -8,11 +8,11 @@
 	"estructuras.h"
 	<string>
 
-1697684806 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.h
+1697756478 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.h
 	<iostream>
 	"estructuras.h"
 
-1697684748 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.cpp
+1697753472 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funciones.cpp
 	<iostream>
 	<locale>
 	"funciones.h"
@@ -21,7 +21,7 @@
 1697326842 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\jugador.h
 	<string>
 
-1697679729 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesjugar.cpp
+1697754256 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesjugar.cpp
 	<iostream>
 	"funciones.h"
 	"estructuras.h"
@@ -29,6 +29,16 @@
 1697599879 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\estructuras.h
 
 1697592637 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesrandom.cpp
+	"funciones.h"
+	"estructuras.h"
+
+1697756478 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesdado.cpp
+	<iostream>
+	"funciones.h"
+	"estructuras.h"
+
+1697756478 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\trabajolabofinal\funcionesunderthegun.cpp
+	<iostream>
 	"funciones.h"
 	"estructuras.h"
 

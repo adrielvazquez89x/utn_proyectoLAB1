@@ -4,7 +4,19 @@
 #include "estructuras.h"
 
 using namespace std;
-
+// Reglas del juego:
+// 1. Las cartas se organizan de A a 10 de manera ordenada, se mezclan y reparten nuevamente.
+// 2. Opción de nivel "Dios": empate en todo, por ejemplo, 2 Ases + 2 Ks + Js.
+// 3. Determinación de quién comienza:
+//    - Más Ases
+//    - Más Ks
+//    - Más Qs
+//    - Más Js
+//    - Más 10s
+// B - Información de la ronda, jugadores, el turno del jugador y cartas correspondientes.
+// C - Acción: Lanzamiento del dado
+// mezclarDado(dado);
+// cout << "El valor del dado ahora es: " << dado;
 
 void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2)
 {
@@ -20,6 +32,7 @@ void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2)
     cin >> opcion;
     manejarOpcion(opcion, j1, j2);
 }
+
 
 void manejarOpcion(int opcion, Jugador &j1, Jugador &j2)
 {
@@ -49,20 +62,26 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2)
         contadorRonda(j1, j2);
         repartirCartas(j1, j2, vMazo); //Crea el corral de cada jugador
 
+        cout << "elegirOrden:" << clutchStarter(j1, j2);
 
+        Jugador j3;
+        Jugador j4;
+        j3.corral[0].valor = "J", j3.corral[1].valor = "J", j3.corral[2].valor = "Q", j3.corral[3].valor = "K", j3.corral[4].valor = "A";
+        j4.corral[0].valor = "10", j4.corral[1].valor = "J", j4.corral[2].valor = "Q", j4.corral[3].valor = "K", j4.corral[4].valor = "A";
 
-            cout << "elegirOrden:" << elegirOrden(j1, j2);
+        if(noStraightHand(j3, j4))
+        {
+            cout << "HOLA es VERDADERO";
+        }
+        else
+        {
+            cout << "CHAU es FALSO";
+        }
 
+        cout << "Lanzar dado: " <<  lanzarDado(6) << " <----" << endl;
+        cout << "Lanzar dado: " <<  lanzarDado(6) << " <----" << endl;
+        cout << "Lanzar dado: " <<  lanzarDado(6) << " <----" << endl;
 
-        //    ->10-J-Q-K-A de manera ordenada, se mezcla y reparte nuevamente.
-        //    ->OPCI�N NIVEL  DIOS: EMPATE EN TODO! POR EJ 2 ASES + 2 Ks + Js
-        //    ->QUIEN COMIENZA? MAS ASES - MAS Ks - MAS Qs - MAS Js - MAS 10s
-        //  B - INFORMACION de RONDA - JUGADORES - EL TURNO DEL JUGADOR - CARTAS QUE LE CORRESPONDE
-        //  C- ACCION: LANZAMIENTO DADO
-
-
-        // mezclarDado(dado);
-        //cout << "El dado ahora es: " << dado;
         break;
     }
     case 2:

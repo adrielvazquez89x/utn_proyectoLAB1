@@ -22,6 +22,11 @@ int generarNumero(int tamanio);
 void repartirCartas(Jugador &j1, Jugador &j2, Carta arr[]);
 void mezclarMazo(Carta vArr[], int tam);
 void contadorRonda(Jugador j1, Jugador j2);
-int elegirOrden(Jugador j1, Jugador j2);
 
-//void repartirCartas(Carta vMazoMano[], Jugador jugador1, Jugador jugador2);
+/// FUNCIONES UNDER THE GUN
+int clutchStarter(Jugador j1, Jugador j2);
+bool noStraightHand(Jugador &j1, Jugador &j2) ;
+
+///FUNCIONES DADO
+int lanzarDado(int d);
+
