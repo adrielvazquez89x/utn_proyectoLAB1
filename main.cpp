@@ -4,6 +4,7 @@
 #include <ctime>   // Necesario para time()
 #include "funciones.h"
 #include "estructuras.h"
+#include <string>
 
 using namespace std;
 

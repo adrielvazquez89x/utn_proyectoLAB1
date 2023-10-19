@@ -1,4 +1,4 @@
-#pragma once;
+#pragma once
 using namespace std;
 
 const int MAZO_PALO=4, MAZO_VALOR=5, CARTAS_CORRAL=5, MAZO=20;

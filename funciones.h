@@ -19,8 +19,9 @@ void nombresJugadores(Jugador &j1, Jugador &j2);
 int generarNumero(int tamanio);
 
 /// FUNCIONES JUGAR
-void repartirCartas(Jugador j1, Jugador j2, Carta arr[]);
+void repartirCartas(Jugador &j1, Jugador &j2, Carta arr[]);
 void mezclarMazo(Carta vArr[], int tam);
 void contadorRonda(Jugador j1, Jugador j2);
+int elegirOrden(Jugador j1, Jugador j2);
 
 //void repartirCartas(Carta vMazoMano[], Jugador jugador1, Jugador jugador2);
