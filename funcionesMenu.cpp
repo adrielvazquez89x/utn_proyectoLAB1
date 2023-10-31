@@ -1,119 +1,107 @@
-#include<iostream>
-#include<locale>
-#include<stdio.h>
+#include <iostream>
+#include <locale>
+#include <iomanip> // Necesario para setw
 #include "rlutil.h"
 #include "funciones.h"
 #include "estructuras.h"
 
 using namespace std;
 
-
-void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[])
+void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
 {
+  setlocale(LC_ALL, "Spanish");
 
-    setlocale(LC_ALL, "Spanish");
+  cout << "La ultima jugada fue: " << ultimaJugada << endl;
 
-    cout << endl << "CLUTCH " << endl; //Usamos el UNICODE
-    cout << "--------------------" << endl;
-    cout << "1 - JUGAR" << endl;
-    cout << "2 - ESTADÍSTICAS" << endl;
-    cout << "3 - CRÉDITOS" << endl;
-    cout << "---------------------" << endl;
-    cout << "0 - SALIR" << endl;
-    cout << "Ingrese su opción: ";
-    cin >> opcion;
-    manejarOpcion(opcion, j1, j2, vEstadisticas);
+  int ptjGanar = 15;
+  int ptjUltRob = 0;
+  int ptjcartasMal = 0; //lo suma en el for
+  int ptjSinPasar = 0;
+  int ptjSinRobo = 0;
+  int total = 0;
+
+  //Procesar ganador:
+
+  if(ultimaJugada == 3){
+    ptjUltRob = 10;
+  }
+
+  if(ganador.sinPasarTurno){
+    ptjSinPasar = 10;
+  }
+
+  if(ganador.sinRobo){
+      ptjSinRobo = 5;
+  }
+
+  for(int x = 0; x < CARTAS_CORRAL; x++)
+  {
+    if(perdedor.corral[x].valor != ganador.corral[x].valor)
+    {
+      ptjcartasMal+=5;
+    }
+  }
+
+  total = ptjGanar + ptjUltRob + ptjcartasMal + ptjSinPasar + ptjSinRobo;
+
+  cout << endl;
+  cout << "--------------------------------------------------------------------------" << endl;
+  cout << "RESULTADOS DE LA PARTIDA" << endl;
+  cout << "--------------------------------------------------------------------------" << endl;
+  cout << "Ganar la partida:" << setw(31) << " | " << ptjGanar << " pts" << endl;
+  cout << "Robo Ãºltima carta al jugador rival:" << setw(12) << " | "  << ptjUltRob << " pts" << endl;
+  cout << "Cartas mal ubicadas del rival x" << ptjcartasMal / 5 << setw(16) << " | " << ptjcartasMal << " pts"<< endl;
+  cout << "Sin pasar de turno:" << setw(29) << " | "<< ptjSinPasar <<  " pts" << endl;
+  cout << "Sin haber sufrido un robo del rival:" << setw(12) << " | " << ptjSinRobo << " pts" << endl;
+  cout << "---------------------------------------------------------------------------" << endl;
+  cout << "TOTAL:" << setw(42) << " | " << total << " pts" << endl;
+  cout << "---------------------------------------------------------------------------" << endl;
+  cout << "Presione una tecla para continuar" << endl;
+  rlutil::anykey();
 }
 
-void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[])
+
+
+  /*cout << "CLUTCH" << endl;
+  cout <<" -----------------------------------------------------------------------------" << endl;
+  cout << endl;
+  cout << "HITO                                               " << ganador.nombre << endl;
+  cout << "-----------------------------------------------------------------------------" << endl;
+  cout << "Ganar la partida                              "<< ptjGanar  << endl;
+  cout << "Robo ï¿½ltima carta la jugador rival     "    << ptjUltRob << endl;
+  cout << "Cartas mal ubicadas del rival x" << ptjcartasMal / 5 << "          " << ptjcartasMal << endl;
+  cout << "Sin pasar de turno                                " << ptjSinPasar <<endl;
+  cout << "Sin Haber sufrido un robo del rival    "  << ptjSinRobo <<endl;
+  cout <<"-----------------------------------------------------------------------------" << endl;
+  cout << "TOTAL                                                  " << total  << endl;
+  cout << endl;
+  cout << "GANADOR: " << ganador.nombre << " con " << total << " puntos de victoria." <<endl;
+  cout << endl;
+  cout << "Presione 0 para continuar" <<endl;
+}*/
+
+void cargarEstadisticas(Jugador vJugador[], Jugador &ganador)
 {
-    setlocale(LC_ALL, "Spanish");
-    switch (opcion)
+    for(int x = 0; x < CARTAS_CORRAL; x++)
     {
-    case 1: //Jugar
-    {
-        rlutil::cls();
-
-        // INGRESO NOMBRES
-        nombresJugadores(j1, j2);
-
-        cout <<"ENHORABUENA COMENZAMOS EL JUEGO!!!" << endl;
-        cout << "ESTAS SON LAS CARTAS INICIALES" << endl;
-
-        // Declaramos el mazo.
-        Carta vMazo[MAZO];
-
-        // Restea y pone por default.
-        resetearMazo(vMazo);
-
-        // Mostramos el mazo completo y ordenado.
-        mostrarMazoEnMesa(vMazo);
-
-        // Mezclamos el orden de las cartas.
-        mezclarMazo(vMazo);
-
-        // Repartimos las cartas a los jugadores.
-        repartirCartas(j1, j2, vMazo);
-
-        // Mostramos las manos de los jugadores.
-        mostrarCartasDeJugadores(j1, j2);
-
-        //Valida que no haya escalera
-        while(straightHand(j1, j2))
+        if(ganador.puntaje > vJugador[x].puntaje)
         {
-            cin.ignore();
-            cout << "OPS SALIO ESCALERA! VOLVEREMOS A REPARTIR...";
-            // Limpiar el bufer de entrada de cualquier caracter pendiente, incluyendo el carácter de nueva línea.
-            cout << "Mezclando mazo, presione enter para continuar...";
-            // Espera a que se presione una tecla
-            getchar();
-
-            //resetear mazo inicial y volver a repartir cartas
-            resetearMazo(vMazo);
-            repartirCartas(j1, j2, vMazo);
+            vJugador[x].nombre = ganador.nombre;
+            x = CARTAS_CORRAL;
         }
-
-        rlutil::setColor(rlutil::RED);
-        cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO" << endl;
-        cout << "Veremos quien tiene mas A, caso de empate seguiremos comparando con los siguientes valores (K, Q, J, 10)" << endl;
-        rlutil::setColor(rlutil::BLACK);
-
-        //Valida quien inicia el juego y que no haya empate en el inicio
-        int starter = clutchStarter(j1, j2);
-        while(starter == 0)
-        {
-            // Limpiar el búfer de entrada de cualquier carácter pendiente, incluyendo el carácter de nueva línea
-            cin.ignore();
-            cout << "***** OPS SALIO EMPATE... *****" << endl;
-            cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO, presione enter para continuar...";
-            getchar(); // Espera a que se presione una tecla
-            resetearMazo(vMazo);
-            mezclarMazo(vMazo);
-            repartirCartas(j1,j2, vMazo);
-            starter = clutchStarter(j1, j2);
-        }
-
-        cout << endl << "-> El jugador que inicia es: " << ((starter == 1) ? j1.nombre : j2.nombre) << " <-" << endl << endl;
-
-        juegoInsitu(j1, j2, starter, vMazo, vEstadisticas);
-
-        break;
-    }
-    case 2:
-        //estadisticas();
-        break;
-    case 3:
-        //creditos();
-        break;
-    case 0:
-        cout << "Gracias por jugar CLUTCH" << endl;
-        break;
-    default:
-        cout << "El numero ingresado no es valido. Por favor ingrese una opcion valida." << endl;
-        mostrarMenu(opcion, j1, j2, vEstadisticas);
-        break;
     }
 }
+
+void mostrarEstadisticas(Jugador vJugador[])
+{
+    cout << "RANKING MEJORES JUGADORES " << endl;
+    cout << "NOMBRE                                        PUNTAJE" <<endl;
+    for(int x = 0; x < CARTAS_CORRAL; x++)
+    {
+        cout<< x +1 <<")" << vJugador[x].nombre << "            " << vJugador[x].puntaje;
+    }
+}
+
 
 
 

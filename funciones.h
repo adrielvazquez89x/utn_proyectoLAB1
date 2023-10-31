@@ -1,11 +1,8 @@
 #pragma once //guards
-
 #include<iostream>
 #include "estructuras.h"
 
-//ACA VAN LAS DECLARACIONES
-
-///FUNCIONES DE MENÚ
+///FUNCIONES DE MENï¿½
 void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]);
 void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]);
 
@@ -22,6 +19,8 @@ void repartirCartas(Jugador &j1, Jugador &j2, Carta arr[]);
 void mostrarRonda(Jugador jA, Jugador jB, int &contRonda);
 void mostrarMazoEnMesa(Carta vMazo[]);
 void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2);
+void validarIngreso(int &posicionCorral);
+
 
 ///FUNCIONES UNDER THE GUN
 int clutchStarter(Jugador j1, Jugador j2);
@@ -34,7 +33,7 @@ void dadoCaraDos(Jugador &j, Carta mazo[]);
 void dadoCaraTres(Jugador &j1, Jugador &j2);
 void dadoCaraCuatro(Jugador &j);
 void dadoCaraCinco(Jugador &j);
-void dadoCaraSeis(Jugador &j1, Jugador &j2, Carta vMazo[]);
+void dadoCaraSeis(Jugador &j1, Jugador &j2, Carta vMazo[], int &ultimaJugada);
 
 ///JUEGO IN SITU
 void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador vEstadisticas[]);
@@ -43,8 +42,6 @@ void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador v
 bool juegoFinalizado(Jugador &jugador);
 
 ///PUNTAJES
-void mostrarPuntajes(Jugador &ganador, Jugador &perdedor);
+void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada);
 void cargarEstadisticas(Jugador vJugador[], Jugador &ganador);
 void mostrarEstadisticas(Jugador vJugador[]);
-
-
