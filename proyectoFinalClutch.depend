@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1698459220 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesdado.cpp
+	<iostream>
+	"funciones.h"
+	"estructuras.h"
+
+1698443694 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funciones.h
+	<iostream>
+	"estructuras.h"
+
+1698461004 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\estructuras.h
+
+1698459427 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesrandom.cpp
+	"funciones.h"
+	"estructuras.h"
+
+1698442679 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesunderthegun.cpp
+	<iostream>
+	"funciones.h"
+	"estructuras.h"
+
+1698442679 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\main.cpp
+	<iostream>
+	<locale>
+	<cstdlib>
+	<ctime>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1571584339 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1698442679 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesmenu.cpp
+	<iostream>
+	<locale>
+	<stdio.h>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1698460988 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionespuntaje.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1698461044 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesjugar.cpp
+	<iostream>
+	<iomanip>
+	<cstdio>
+	<locale>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
