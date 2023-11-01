@@ -45,3 +45,6 @@ bool juegoFinalizado(Jugador &jugador);
 void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada);
 void cargarEstadisticas(Jugador vJugador[], Jugador &ganador);
 void mostrarEstadisticas(Jugador vJugador[]);
+
+///CREDITOS
+void mostrarCreditos (int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]);
