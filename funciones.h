@@ -2,7 +2,7 @@
 #include<iostream>
 #include "estructuras.h"
 
-///FUNCIONES DE MEN�
+///FUNCIONES DE MENU
 void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]);
 void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]);
 

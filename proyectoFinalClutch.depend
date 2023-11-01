@@ -1,25 +1,26 @@
 # depslib dependency file v1.0
-1698459220 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesdado.cpp
+1698761177 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesdado.cpp
 	<iostream>
+	"rlutil.h"
 	"funciones.h"
 	"estructuras.h"
 
-1698443694 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funciones.h
+1698766750 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funciones.h
 	<iostream>
 	"estructuras.h"
 
-1698461004 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\estructuras.h
+1698761177 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\estructuras.h
 
 1698459427 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesrandom.cpp
 	"funciones.h"
 	"estructuras.h"
 
-1698442679 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesunderthegun.cpp
+1698761178 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesunderthegun.cpp
 	<iostream>
 	"funciones.h"
 	"estructuras.h"
 
-1698442679 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\main.cpp
+1698761178 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\main.cpp
 	<iostream>
 	<locale>
 	<cstdlib>
@@ -42,7 +43,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1698442679 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesmenu.cpp
+1698774800 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesmenu.cpp
 	<iostream>
 	<locale>
 	<stdio.h>
@@ -50,18 +51,18 @@
 	"funciones.h"
 	"estructuras.h"
 
-1698460988 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionespuntaje.cpp
+1698774022 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionespuntaje.cpp
 	<iostream>
 	<locale>
+	<iomanip>
 	"rlutil.h"
 	"funciones.h"
 	"estructuras.h"
 
-1698461044 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesjugar.cpp
+1698856120 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\proyectofinalclutch\funcionesjugar.cpp
 	<iostream>
 	<iomanip>
 	<cstdio>
-	<locale>
 	"rlutil.h"
 	"funciones.h"
 	"estructuras.h"
