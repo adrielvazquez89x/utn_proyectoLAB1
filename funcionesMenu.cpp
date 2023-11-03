@@ -26,7 +26,7 @@ void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[])
         {
             cout << "ERROR: " << opcion << " no es un numero valido. Presione una tecla para continuar...." << endl;
             rlutil::anykey();
-            rlutil::cls();//Borra pantalla para ver el fondo verde
+            rlutil::cls();//Borra pantalla
         }
         else
         {
@@ -99,19 +99,19 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]
         cout << "-> El jugador que inicia es: " << ((starter == 1) ? j1.nombre : j2.nombre) << " <-" << endl << endl;
 
         ///ACA se tiene que guardar el dato
+
         Jugador ganador;
-        juegoInsitu(j1, j2, starter, vMazo, ganador);
+
+        ganador = juegoInsitu(j1, j2, starter, vMazo);
 
         j1 = ganador;
-        cout << "Ganador: " << ganador.puntajeHistorico << endl;
 
-
+        rlutil::cls();
         break;
     }
     case 2:
-        //mostrarHito(j1,j2);
-        cout << j1.nombre << " y su puntaje es: " << j1.puntajeHistorico << endl;
-        cout << j2.nombre << " y su puntaje es: " << j2.puntajeHistorico << endl;
+        rlutil::cls();
+        mostrarHito(j1,j2);
 
         break;
 

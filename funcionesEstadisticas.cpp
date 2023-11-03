@@ -39,6 +39,8 @@ void mostrarHito(Jugador &j1, Jugador &j2)
         cout << "TOTAL: " << setw(28) << " | " << jugadorHito.puntajeHistorico  << " puntos" << endl;
         cout << "Presione una tecla para continuar..." << endl;
         rlutil::anykey();
+
     }
+    rlutil::cls();
 }
 

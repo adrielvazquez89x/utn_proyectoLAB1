@@ -285,12 +285,14 @@ bool juegoFinalizado(Jugador &j)
     return true;
 }
 
-void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador &winner)  /// el returne viene de clutchStarter
+Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// el returne viene de clutchStarter
 {
     setlocale(LC_ALL, "Spanish");
 
     Jugador jugadorA;
     Jugador jugadorB;
+    Jugador ganador;
+
     int dado = 6, turno = 1, contRonda = 1, ultimaJugada = -1;
 
     if(returne == 1)
@@ -381,8 +383,7 @@ void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador &
 
         mostrarPuntajes(jugadorA, jugadorB, ultimaJugada);
 
-        winner.nombre = jugadorA.nombre;
-        winner.puntajeHistorico = calcularPuntajes(jugadorA, jugadorB, ultimaJugada);
+        ganador = jugadorA;
 
     }
     else
@@ -393,9 +394,7 @@ void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador &
 
         mostrarPuntajes(jugadorB, jugadorA,  ultimaJugada);
 
-        winner.nombre = jugadorB.nombre;
-        winner.puntajeHistorico = calcularPuntajes(jugadorB, jugadorA, ultimaJugada);
-
+        ganador = jugadorB;
     }
-
+    return ganador;
 }

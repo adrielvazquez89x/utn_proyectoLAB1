@@ -36,7 +36,7 @@ void dadoCaraCinco(Jugador &j);
 void dadoCaraSeis(Jugador &j1, Jugador &j2, Carta vMazo[], int &ultimaJugada);
 
 ///JUEGO IN SITU
-void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador &winner);
+Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[]);
 
 ///FIN DE JUEGO
 bool juegoFinalizado(Jugador &jugador);
@@ -44,9 +44,6 @@ bool juegoFinalizado(Jugador &jugador);
 ///PUNTAJES
 void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada);
 void mostrarHito(Jugador &j1, Jugador &j2);
-
-///PROVISORIAS
-int calcularPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada);
 
 ///CREDITOS
 void mostrarCreditos (int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]);

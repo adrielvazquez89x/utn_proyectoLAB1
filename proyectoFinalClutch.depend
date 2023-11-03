@@ -81,7 +81,7 @@
 	"funciones.h"
 	"rlutil.h"
 
-1698979484 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funciones.h
+1699017675 d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funciones.h
 	<iostream>
 	"estructuras.h"
 
@@ -107,7 +107,7 @@
 	"funciones.h"
 	"estructuras.h"
 
-1698979322 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesjugar.cpp
+1699017483 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesjugar.cpp
 	<iostream>
 	<iomanip>
 	<cstdio>
@@ -115,7 +115,7 @@
 	"funciones.h"
 	"estructuras.h"
 
-1698979401 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesmenu.cpp
+1699017768 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesmenu.cpp
 	<iostream>
 	<locale>
 	<stdio.h>
@@ -123,7 +123,7 @@
 	"funciones.h"
 	"estructuras.h"
 
-1698979571 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionespuntaje.cpp
+1699017675 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionespuntaje.cpp
 	<iostream>
 	<locale>
 	<iomanip>
@@ -135,7 +135,7 @@
 	"funciones.h"
 	"estructuras.h"
 
-1698871755 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesunderthegun.cpp
+1698981280 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesunderthegun.cpp
 	<iostream>
 	"funciones.h"
 	"estructuras.h"
@@ -149,7 +149,7 @@
 	"funciones.h"
 	"estructuras.h"
 
-1698973485 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesestadisticas.cpp
+1699017828 source:d:\utn\01 - primer cuatrimestre\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesestadisticas.cpp
 	<iostream>
 	<iomanip>
 	"rlutil.h"
