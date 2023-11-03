@@ -3,8 +3,6 @@
 #include "funciones.h"
 #include "estructuras.h"
 
-
-
 void dadoCaraUno(Jugador &j, Carta mazo[]) ///elige del propio corral y cambia por mazo
 {
     int posicion;

@@ -18,7 +18,7 @@ struct Jugador
 {
     string nombre;
     Carta corral[CARTAS_CORRAL];
-    int puntaje = 0;
+    int puntajeHistorico = 0;
     bool sinPasarTurno = true;
     bool sinRobo = true;
 };

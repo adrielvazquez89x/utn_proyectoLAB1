@@ -56,8 +56,8 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]
         repartirCartas(j1, j2, vMazo);
         mostrarCartasDeJugadores(j1,j2);
 
-//      j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
-//      j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "A";
+        j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
+        j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "A";
 
 
         //Valida que no haya escalera
@@ -98,10 +98,22 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]
 
         cout << "-> El jugador que inicia es: " << ((starter == 1) ? j1.nombre : j2.nombre) << " <-" << endl << endl;
 
-        juegoInsitu(j1, j2, starter, vMazo, vEstadisticas);
+        ///ACA se tiene que guardar el dato
+        Jugador ganador;
+        juegoInsitu(j1, j2, starter, vMazo, ganador);
+
+        j1 = ganador;
+        cout << "Ganador: " << ganador.puntajeHistorico << endl;
+
 
         break;
     }
+    case 2:
+        //mostrarHito(j1,j2);
+        cout << j1.nombre << " y su puntaje es: " << j1.puntajeHistorico << endl;
+        cout << j2.nombre << " y su puntaje es: " << j2.puntajeHistorico << endl;
+
+        break;
 
     case 3:
         mostrarCreditos(opcion, j1, j2, vEstadisticas);

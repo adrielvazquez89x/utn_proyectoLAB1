@@ -246,7 +246,7 @@ void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
     cout << "+--------------------+" << endl;
 }
 
-void mostrarRonda(Jugador jA, Jugador jB, int &contRonda, int &turno)
+void mostrarRonda(Jugador &jA, Jugador &jB, int &contRonda, int &turno)
 {
     cout << "CLUTCH" << endl;
     cout << "---------------------------------------------------------" << endl;
@@ -285,7 +285,7 @@ bool juegoFinalizado(Jugador &j)
     return true;
 }
 
-void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador vEstadisticas[])  /// el returne viene de clutchStarter
+void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador &winner)  /// el returne viene de clutchStarter
 {
     setlocale(LC_ALL, "Spanish");
 
@@ -378,16 +378,24 @@ void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador v
         rlutil::setBackgroundColor(rlutil::GREEN);
         cout << jugadorA.nombre << endl;
         rlutil::setBackgroundColor(rlutil::WHITE);
+
         mostrarPuntajes(jugadorA, jugadorB, ultimaJugada);
-        cargarEstadisticas(vEstadisticas, jugadorA);
+
+        winner.nombre = jugadorA.nombre;
+        winner.puntajeHistorico = calcularPuntajes(jugadorA, jugadorB, ultimaJugada);
+
     }
     else
     {
         rlutil::setBackgroundColor(rlutil::GREEN);
         cout << jugadorB.nombre << endl;
         rlutil::setBackgroundColor(rlutil::WHITE);
+
         mostrarPuntajes(jugadorB, jugadorA,  ultimaJugada);
-        cargarEstadisticas(vEstadisticas, jugadorB);
+
+        winner.nombre = jugadorB.nombre;
+        winner.puntajeHistorico = calcularPuntajes(jugadorB, jugadorA, ultimaJugada);
+
     }
 
 }

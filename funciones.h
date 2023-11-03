@@ -16,14 +16,14 @@ int generarNumero(int tamanio);
 void resetearMazo(Carta vMazo[]);
 void mezclarMazo(Carta vArr[]);
 void repartirCartas(Jugador &j1, Jugador &j2, Carta arr[]);
-void mostrarRonda(Jugador jA, Jugador jB, int &contRonda);
+void mostrarRonda(Jugador &jA, Jugador &jB, int &contRonda);
 void mostrarMazoEnMesa(Carta vMazo[]);
 void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2);
 void validarIngreso(int &posicionCorral);
 
 
 ///FUNCIONES UNDER THE GUN
-int clutchStarter(Jugador j1, Jugador j2);
+int clutchStarter(Jugador &j1, Jugador &j2);
 bool straightHand (Jugador &j1, Jugador &j2);
 
 ///FUNCIONES DADO
@@ -36,15 +36,17 @@ void dadoCaraCinco(Jugador &j);
 void dadoCaraSeis(Jugador &j1, Jugador &j2, Carta vMazo[], int &ultimaJugada);
 
 ///JUEGO IN SITU
-void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador vEstadisticas[]);
+void juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[], Jugador &winner);
 
 ///FIN DE JUEGO
 bool juegoFinalizado(Jugador &jugador);
 
 ///PUNTAJES
 void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada);
-void cargarEstadisticas(Jugador vJugador[], Jugador &ganador);
-void mostrarEstadisticas(Jugador vJugador[]);
+void mostrarHito(Jugador &j1, Jugador &j2);
+
+///PROVISORIAS
+int calcularPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada);
 
 ///CREDITOS
 void mostrarCreditos (int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]);

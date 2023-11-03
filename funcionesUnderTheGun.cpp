@@ -16,7 +16,7 @@ bool straightHand (Jugador &j1, Jugador &j2){ ///SE USA UNA VEZ ESTA FX
   return (contadorEscalera1 == 5 || contadorEscalera2 == 5) ? true : false;
 }
 
-int clutchStarter(Jugador j1, Jugador j2) /// validad el RETURN 0; ///SE USA UNA VEZ ESTA FX
+int clutchStarter(Jugador &j1, Jugador &j2) /// validad el RETURN 0; ///SE USA UNA VEZ ESTA FX
 {
   int contadores1[CARTAS_CORRAL] = {}; // indice [0] = A, [1] = K, [2] = Q, etc...
   int contadores2[CARTAS_CORRAL] = {};
