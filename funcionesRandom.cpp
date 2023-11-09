@@ -12,7 +12,6 @@ int generarNumero(int tamanio)
 
 int lanzarDado()
 {
-    int dado = generarNumero(6) + 1;
-
+    int dado = generarNumero(6) + 1;//si pasaba como parametro int d daba problemas
     return dado;
 }

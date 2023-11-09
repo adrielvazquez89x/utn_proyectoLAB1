@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Level-Complete.wav" />
 		<Unit filename="estructuras.h" />
 		<Unit filename="funciones.h" />
 		<Unit filename="funcionesCreditos.cpp" />
@@ -43,6 +44,7 @@
 		<Unit filename="funcionesRandom.cpp" />
 		<Unit filename="funcionesUnderTheGun.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="mk1.wav" />
 		<Unit filename="rlutil.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

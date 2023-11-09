@@ -124,7 +124,7 @@ void mostrarMazoEnMesa(Carta vMazo[])
             cout << "|     ";
             if(vMazo[x].palo == "Corazon" || vMazo[x].palo == "Diamante" )
             {
-                rlutil::setColor(rlutil::LIGHTRED);
+                rlutil::setColor(rlutil::RED);
                 cout<< vMazo[x].valor << " " << vMazo[x].palo;
                 rlutil::setColor(rlutil::BLACK);
             }
@@ -165,7 +165,6 @@ void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
                 cout << j1.corral[x].palo << " " << j1.corral[x].valor << setw(13 - j1.corral[x].valor.length() - j1.corral[x].palo.length());
                 rlutil::setColor(rlutil::BLACK);
                 cout << "|";
-
             }
             else
             {
@@ -183,7 +182,6 @@ void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
                 cout << j1.corral[x].palo << " " << j1.corral[x].valor << setw(15 - j1.corral[x].valor.length() - j1.corral[x].palo.length());
                 rlutil::setColor(rlutil::BLACK);
                 cout << "|";
-
             }
             else
             {
@@ -246,7 +244,9 @@ void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
     cout << "+--------------------+" << endl;
 }
 
-void mostrarRonda(Jugador &jA, Jugador &jB, int &contRonda, int &turno)
+
+
+void mostrarRonda(Jugador jA, Jugador jB, int &contRonda, int &turno)
 {
     cout << "CLUTCH" << endl;
     cout << "---------------------------------------------------------" << endl;
@@ -285,6 +285,7 @@ bool juegoFinalizado(Jugador &j)
     return true;
 }
 
+
 Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// el returne viene de clutchStarter
 {
     setlocale(LC_ALL, "Spanish");
@@ -293,7 +294,7 @@ Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// e
     Jugador jugadorB;
     Jugador ganador;
 
-    int dado = 6, turno = 1, contRonda = 1, ultimaJugada = -1;
+    int dado, turno = 1, contRonda = 1, ultimaJugada = -1;
 
     if(returne == 1)
     {
@@ -326,7 +327,7 @@ Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// e
         }
 
         cout << "Pulse Enter para lanzar el dado! "<< endl;
-        //dado = lanzarDado();
+        dado = lanzarDado();
         getchar();// Espera a que se presione una tecla
 
         cout << "LANZAMIENTO DADO #" << dado << endl;
@@ -398,3 +399,5 @@ Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// e
     }
     return ganador;
 }
+
+

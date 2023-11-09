@@ -7,6 +7,8 @@
 
 using namespace std;
 
+
+
 void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
 {
     setlocale(LC_ALL, "Spanish");
@@ -48,11 +50,6 @@ void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
     total = ptjGanar + ptjUltRob + ptjcartasMal + ptjSinPasar + ptjSinRobo;
     ganador.puntajeHistorico = total;
 
-
-    cout << "GANADOR: " << ganador.nombre << " PUNTAJE: " << ganador.puntajeHistorico << endl;
-    cout << "PERDEDOR: " << perdedor.nombre << " PUNTAJE: " << perdedor.puntajeHistorico << endl;
-
-
     cout << endl;
     cout << "--------------------------------------------------------------------------" << endl;
     cout << "RESULTADOS DE LA PARTIDA" << endl;
@@ -67,5 +64,13 @@ void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
     cout << "---------------------------------------------------------------------------" << endl;
     cout << "Presione una tecla para continuar" << endl;
     rlutil::anykey();
+    rlutil::cls();
+
+
 }
+
+
+
+
+
 

@@ -10,22 +10,22 @@ using namespace std;
 
 int main()
 {
-  rlutil::setBackgroundColor(rlutil::WHITE);
-  rlutil::cls();//Borra pantalla para ver el fondo verde
-  rlutil::setColor(rlutil::BLACK);
+    rlutil::setBackgroundColor(rlutil::WHITE);
+    rlutil::cls();//Borra pantalla para ver el fondo verde
+    rlutil::setColor(rlutil::BLACK);
 
-  setlocale(LC_ALL, "Spanish");
-  srand(time(NULL));
+    setlocale(LC_ALL, "Spanish");
+    srand(time(NULL));
 
-  int opcion; // INGRESO AL SWITCH DE OPCIONES
-  Jugador jugador1;
-  Jugador jugador2;
+    Jugador jugador1;
+    Jugador jugador2;
 
- //Array para las estadiscicas
-  Jugador estadisticas[CARTAS_CORRAL] = {};
+    bool banderaUltimoGanador = false;
 
-  //FUNCION MENU()
-  mostrarMenu(opcion, jugador1, jugador2, estadisticas); //MUESTRA el menu y maneja la opcion elegida
+    //FUNCION MENU()
+    mostrarMenu(jugador1, jugador2, banderaUltimoGanador);
 
-  return 0;
+    return 0;
 }
+
+

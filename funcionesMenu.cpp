@@ -7,9 +7,12 @@
 
 using namespace std;
 
-void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[])
+
+void mostrarMenu(Jugador &j1, Jugador &j2, bool &banderaUltimoGanador)
 {
     setlocale(LC_ALL, "Spanish");
+    int opcion;
+    Jugador ganadorMaximo; //si esto lo declaro en manejarOpcion no funciona
 
     do
     {
@@ -22,23 +25,28 @@ void mostrarMenu(int &opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[])
         cout << "0 - SALIR" << endl;
         cout << "Ingrese su opcion: ";
         cin >> opcion;
+
         if(opcion < 0 || opcion > 3)
         {
             cout << "ERROR: " << opcion << " no es un numero valido. Presione una tecla para continuar...." << endl;
             rlutil::anykey();
-            rlutil::cls();//Borra pantalla
+            rlutil::cls();//Borra pantalla para ver el fondo verde
         }
         else
         {
-            manejarOpcion(opcion, j1, j2, vEstadisticas);
+            manejarOpcion(opcion, j1, j2, ganadorMaximo, banderaUltimoGanador);
         }
+
     }
     while(opcion !=0);
 }
 
-void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[])
+
+void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo, bool &banderaUltimoGanador)
 {
     setlocale(LC_ALL, "Spanish");
+    Jugador ganador;
+
     switch (opcion)
     {
     case 1: //Jugar
@@ -46,18 +54,22 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]
         rlutil::cls(); //Borra lo que estaba antes al elegir una opcion
         nombresJugadores(j1, j2);// INGRESO NOMBRES
         rlutil::cls();
+
         cout << "ENHORABUENA COMENZAMOS EL JUEGO!!!" << endl;
         cout << "ESTAS SON LAS CARTAS INICIALES" << endl;
 
         Carta vMazo[MAZO];//Declaro el mazo
-        resetearMazo(vMazo);//resetea y pone default)
+        resetearMazo(vMazo);//resetea y pone default -> ordena el mazo
         mostrarMazoEnMesa(vMazo);//Mostramos el mazo ordenado
+
         mezclarMazo(vMazo); //esto mezcla el mazo completo
+        cout << "Las cartas de cada jugador son: " << endl;
         repartirCartas(j1, j2, vMazo);
         mostrarCartasDeJugadores(j1,j2);
 
-        j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
-        j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "A";
+ /// Para pruebas
+//        j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
+//        j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "A";
 
 
         //Valida que no haya escalera
@@ -75,7 +87,6 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]
             mostrarCartasDeJugadores(j1,j2);
         }
 
-
         rlutil::setColor(rlutil::RED);
         cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO" << endl;
         cout << "Veremos quien tiene mas A, caso de empate seguiremos comparando con los siguientes valores (K, Q, J, 10)" << endl;
@@ -85,7 +96,7 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]
         int starter = clutchStarter(j1, j2);
         while(starter == 0)
         {
-            cin.ignore(); // Limpiar el búfer de entrada de cualquier carácter pendiente, incluyendo el carácter de nueva línea
+            cin.ignore(); // Limpiar el b�fer de entrada de cualquier car�cter pendiente, incluyendo el car�cter de nueva l�nea
             cout << "*****OPS SALIO EMPATE...*****" << endl;
             cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO, presione enter para continuar....";
             getchar(); // Espera a que se presione una tecla
@@ -97,32 +108,40 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador vEstadisticas[]
         }
 
         cout << "-> El jugador que inicia es: " << ((starter == 1) ? j1.nombre : j2.nombre) << " <-" << endl << endl;
-
-        ///ACA se tiene que guardar el dato
-
-        Jugador ganador;
+        cout << "Presione una tecla cualquiera cuando est� listo para iniciar el juego.";
+        rlutil::anykey();
+        rlutil::cls();//Borra pantalla para ver el fondo verde
 
         ganador = juegoInsitu(j1, j2, starter, vMazo);
 
-        j1 = ganador;
+        if(!banderaUltimoGanador)
+        {
+            ganadorMaximo = ganador;
+            banderaUltimoGanador  = true;
+        }
+        else if(ganador.puntajeHistorico > ganadorMaximo.puntajeHistorico)
+        {
+            ganadorMaximo = ganador;
+        }
 
-        rlutil::cls();
         break;
     }
-    case 2:
-        rlutil::cls();
-        mostrarHito(j1,j2);
+
+    case 2: //estadisticas
+    {
+
+        mostrarHito(ganadorMaximo);
 
         break;
-
-    case 3:
-        mostrarCreditos(opcion, j1, j2, vEstadisticas);
+    }
+    case 3: //CREDITOS
+    {
+        mostrarCreditos(opcion,j1,j2);
         break;
-
+    }
     case 0:
         cout << "SALIENDO DEL JUEGO. GRACIAS POR JUGAR CLUTCH" << endl;
         break;
-
     }
 }
 

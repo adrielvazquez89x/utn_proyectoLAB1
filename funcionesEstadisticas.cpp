@@ -1,46 +1,34 @@
 #include <iostream>
 #include <iomanip> // Necesario para setw
+#include<windows.h>//Para reproducir musica
+#include<mmsystem.h>//Para reproducir musica
+#include <thread> // Incluye la biblioteca de hilos para reproducir la musica separadamente
 #include "rlutil.h"
 #include "funciones.h"
 #include "estructuras.h"
 
-
-void mostrarHito(Jugador &j1, Jugador &j2)
+void reproducirSonidoEstd()
 {
-    Jugador jugadorHito;
-    string jugadoresEmpateHitoNmbre[2];
-    int jugadoresEmpateHitoPje;
-
-    if(j1.puntajeHistorico == j2.puntajeHistorico)
-    {
-        jugadoresEmpateHitoNmbre[0] = j1.nombre;
-        jugadoresEmpateHitoNmbre[1] = j2.nombre;
-        jugadoresEmpateHitoPje = j1.puntajeHistorico;
-    }
-    else
-    {
-        jugadorHito = (j1.puntajeHistorico > j2.puntajeHistorico) ? j1 : j2;
-    }
-
-    cout << endl << "CLUTCH" << endl;
-    cout << "--------------------------------------------" << endl;
-    if (j1.puntajeHistorico == j2.puntajeHistorico)
-    {
-        cout << "HITO -> EMPATE ENTRE: " << jugadoresEmpateHitoNmbre[0] << " y " << jugadoresEmpateHitoNmbre[1] << endl;
-        cout << "--------------------------------------------" << endl;
-        cout << "TOTAL -> " << jugadoresEmpateHitoPje << " Puntos" << endl;
-        cout << "Presione una tecla para continuar..." << endl;
-        rlutil::anykey();
-    }
-    else
-    {
-        cout << "HITO" << setw(31) << " | " << jugadorHito.nombre << endl;
-        cout << "--------------------------------------------" << endl;
-        cout << "TOTAL: " << setw(28) << " | " << jugadorHito.puntajeHistorico  << " puntos" << endl;
-        cout << "Presione una tecla para continuar..." << endl;
-        rlutil::anykey();
-
-    }
-    rlutil::cls();
+    PlaySound(TEXT("mk1.wav"), NULL, SND_ASYNC);
 }
 
+void mostrarHito(Jugador &ganadorMaximo)
+{
+    thread sonido(reproducirSonidoEstd);
+
+    cout << endl << endl;
+
+    cout << "+-----------------------+" << endl;
+    cout << "|                       |" << endl;
+    cout << "|HITO: " << ganadorMaximo.nombre << setw(18 - ganadorMaximo.nombre.length()) << "|" << endl;
+    cout << "|------------------------" << endl;
+    cout << "|TOTAL: " << ganadorMaximo.puntajeHistorico << " puntos" << setw(9) << "|" << endl;
+    cout << "|                       |" << endl;
+    cout << "+-----------------------+" << endl;
+
+    cout << "Presione una tecla para continuar..." << endl;
+    rlutil::anykey();
+    rlutil::cls();
+    PlaySound(NULL, 0, 0);
+    sonido.join();//esta es para que el programa no se rompa al salir de ESTADISTICA
+}
