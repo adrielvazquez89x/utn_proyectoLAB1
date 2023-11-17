@@ -23,4 +23,4 @@ El proyecto está organizado en varios archivos que incluyen módulos para la l�
 
 Podes ver una demo en el siguiente video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DeOknUoSRrg?si=DnRxenIUQCn-fkrg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://youtu.be/DeOknUoSRrg?si=R4xrzCgNz0QV0TQB
