@@ -11,8 +11,8 @@ using namespace std;
 int main()
 {
     rlutil::setBackgroundColor(rlutil::WHITE);
-    rlutil::cls();//Borra pantalla para ver el fondo verde
-    rlutil::setColor(rlutil::BLACK);
+    rlutil::cls();//Borra pantalla
+    rlutil::setColor(rlutil::BLACK); //Seteamos color de letra
 
     setlocale(LC_ALL, "Spanish");
     srand(time(NULL));

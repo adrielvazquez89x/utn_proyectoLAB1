@@ -7,8 +7,6 @@
 
 using namespace std;
 
-
-
 void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
 {
     setlocale(LC_ALL, "Spanish");
@@ -20,6 +18,7 @@ void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
     int ptjcartasMal = 0; //lo suma en el for
     int ptjSinPasar = 0;
     int ptjSinRobo = 0;
+    int ptjRacista = 0;
     int total = 0;
 
     //Procesar ganador:
@@ -39,6 +38,7 @@ void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
         ptjSinRobo = 5;
     }
 
+    //Procesar perdedor
     for(int x = 0; x < CARTAS_CORRAL; x++)
     {
         if(perdedor.corral[x].valor != ganador.corral[x].valor)
@@ -47,7 +47,8 @@ void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
         }
     }
 
-    total = ptjGanar + ptjUltRob + ptjcartasMal + ptjSinPasar + ptjSinRobo;
+
+    total = ptjGanar + ptjUltRob + ptjcartasMal + ptjSinPasar + ptjSinRobo + ptjRacista;
     ganador.puntajeHistorico = total;
 
     cout << endl;

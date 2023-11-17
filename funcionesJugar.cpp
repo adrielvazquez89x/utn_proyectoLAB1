@@ -5,7 +5,10 @@
 #include "funciones.h"
 #include "estructuras.h"
 
+// iomanip: Libreria para manipular input/ouput de consola.
+
 using namespace std;
+
 
 void nombresJugadores(Jugador &j1, Jugador &j2)
 {
@@ -69,17 +72,19 @@ void mezclarMazo(Carta vArr[])
     setlocale(LC_ALL, "Spanish");
 
     cout << "Mezclando mazo, presione una tecla para continuar...." << endl;
-    //cin.ignore();// Limpiar el buffer de entrada de cualquier caracter pendiente, incluyendo el caracter de nueva linea
-    //getchar(); // Espera a que se presione una tecla
     rlutil::anykey();
 
     int aleatorio1, aleatorio2;
     Carta aux;
 
+    ///Simulación de mezclar mazo.
     for(int x=0; x<100; x++)
     {
-        aleatorio1= generarNumero(MAZO);//Me da 1 aleatoreo
-        aleatorio2= generarNumero(MAZO);//Me da 2 aleatoreo
+        //Generamos indices.
+        aleatorio1= generarNumero(MAZO);//Me da 1 aleatorio
+        aleatorio2= generarNumero(MAZO);//Me da 2 aleatorio
+
+        //Hacemos "enroque"
         aux=vArr[aleatorio1];//Indice 1 {"Diamante", "J", true}
         vArr[aleatorio1]=vArr[aleatorio2]; // Indice 12 {"Pica", "Q", true}
         vArr[aleatorio2]=aux;//Donde tenia PICA Q voy a guardar DIAMANTE J
@@ -89,12 +94,14 @@ void mezclarMazo(Carta vArr[])
 void repartirCartas(Jugador &j1, Jugador &j2, Carta arr[])
 {
     int aleatorio;
-    for (int i = 0; i < MAZO_MESA; i ++)///son 10 vueltas EFECTIVAS!!
+    ///Damos 10 vueltas "Efectivas", el ciclo termina cuando
+    for (int i = 0; i < MAZO_MESA; i ++)
     {
         aleatorio = generarNumero(MAZO);
         if(arr[aleatorio].enMazo == true)/// [1] - [5]
         {
-            if(i%2 == 0) //Indice par se asocia al jugador 1 e impar al jugador 2
+            //Indice par se asocia al jugador 1 e impar al jugador 2. Como son divisiones enteras, aprovechamos ese valor.
+            if(i%2 == 0)
             {
                 j1.corral[i/2]=arr[aleatorio];/// 0/2 = 0
             }
@@ -111,6 +118,9 @@ void repartirCartas(Jugador &j1, Jugador &j2, Carta arr[])
         }
     }
 }
+
+// setw modifica la anchura de campo únicamente para la siguiente entrada o salida. Por defecto es 0, pero se expande cuanto sea necesario.
+// length cuenta la cantidad de caracteres que tiene el string.
 
 void mostrarMazoEnMesa(Carta vMazo[])
 {
@@ -285,8 +295,8 @@ bool juegoFinalizado(Jugador &j)
     return true;
 }
 
-
-Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// el returne viene de clutchStarter
+// Funcion tipo Jugador, para retornar un valor tipo Jugador
+Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  // el returne viene de clutchStarter
 {
     setlocale(LC_ALL, "Spanish");
 
@@ -371,16 +381,18 @@ Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// e
     }
 
     rlutil::setColor(rlutil::MAGENTA);
-    cout << endl << "SHOWDOWN!! MUESTRA TUS CARTAS!:D"<< endl;
+    cout << endl << "SHOWDOWN!! MUESTRA TUS CARTAS! :D"<< endl;
     rlutil::setColor(rlutil::BLACK);
     mostrarCartasDeJugadores(jugadorA, jugadorB);
 
-    cout << "PARAPAPA PA PA PAPA! HAY UN GANADORRR, ESTE ES: " ; // Esto tambien podriamos colorearlo.
+    cout << "PARAPAPA PA PA PAPA! HAY UN GANADORRR, ESTE ES: " ;
     if(juegoFinalizado(jugadorA))
     {
         rlutil::setBackgroundColor(rlutil::GREEN);
+        rlutil::setColor(rlutil::WHITE);
         cout << jugadorA.nombre << endl;
         rlutil::setBackgroundColor(rlutil::WHITE);
+        rlutil::setColor(rlutil::BLACK);
 
         mostrarPuntajes(jugadorA, jugadorB, ultimaJugada);
 

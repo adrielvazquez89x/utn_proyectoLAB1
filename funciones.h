@@ -20,6 +20,7 @@ void mostrarRonda(Jugador jA, Jugador jB, int &contRonda);
 void mostrarMazoEnMesa(Carta vMazo[]);
 void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2);
 void validarIngreso(int &posicionCorral);
+void verificarRacista(Jugador &j1, Jugador &j2);
 
 
 ///FUNCIONES UNDER THE GUN

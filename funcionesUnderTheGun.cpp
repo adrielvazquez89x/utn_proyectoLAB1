@@ -4,7 +4,7 @@
 
 
 ///Comprueba que no haya escalera y quien es el STARTER del juego.
-bool straightHand (Jugador &j1, Jugador &j2)  ///SE USA UNA VEZ ESTA FX
+bool straightHand (Jugador &j1, Jugador &j2)
 {
 
     int contadorEscalera1 = 0;
@@ -12,18 +12,24 @@ bool straightHand (Jugador &j1, Jugador &j2)  ///SE USA UNA VEZ ESTA FX
 
     for(int x = 0; x < CARTAS_CORRAL; x ++)
     {
+        // Comparamos los valores de cada posición con nuestro string de valores. Cuenta cada coincidencia.
         contadorEscalera1 += (j1.corral[x].valor == VALORES[x]) ? 1 : 0;
         contadorEscalera2 += (j2.corral[x].valor == VALORES[x]) ? 1 : 0;
     }
     return (contadorEscalera1 == 5 || contadorEscalera2 == 5) ? true : false;
 }
 
-int clutchStarter(Jugador j1, Jugador j2) /// validad el RETURN 0; ///SE USA UNA VEZ ESTA FX
+/// Validar el RETURN 0 - SE USA UNA VEZ ESTA FX
+int clutchStarter(Jugador j1, Jugador j2)
 {
-    int contadores1[CARTAS_CORRAL] = {}; // indice [0] = A, [1] = K, [2] = Q, etc...
+    // Inicialización de dos nuevos vectores de contadores.
+
+     // indice [0] = A ; [1] = K ; [2] = Q ; [3] = J ; [4] = 10;
+
+    int contadores1[CARTAS_CORRAL] = {};
     int contadores2[CARTAS_CORRAL] = {};
 
-    // cuenta en indice cero cuantas ASES tiene cada jugador
+    // Alamcena en cada indice, cuantas cartas hay.
     for (int x = CARTAS_CORRAL -1; x >= 0; x--)
     {
         for (int y = CARTAS_CORRAL-1; y >= 0; y--)
@@ -33,7 +39,8 @@ int clutchStarter(Jugador j1, Jugador j2) /// validad el RETURN 0; ///SE USA UNA
         }
     }
 
-    // comparar
+    ///Comparamos los contadores:
+
     for (int x = CARTAS_CORRAL-1; x >= 0; x--)
     {
         if (contadores1[x] > contadores2[x])

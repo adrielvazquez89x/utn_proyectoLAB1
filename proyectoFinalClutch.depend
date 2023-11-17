@@ -162,3 +162,91 @@
 	"funciones.h"
 	"estructuras.h"
 
+1699471244 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionescreditos.cpp
+	<iostream>
+	<cstdlib>
+	<locale.h>
+	<windows.h>
+	<mmsystem.h>
+	<thread>
+	"funciones.h"
+	"rlutil.h"
+
+1699652398 d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funciones.h
+	<iostream>
+	"estructuras.h"
+
+1700188472 d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\estructuras.h
+
+1698871755 d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1699561873 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesdado.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1699471196 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesestadisticas.cpp
+	<iostream>
+	<iomanip>
+	<windows.h>
+	<mmsystem.h>
+	<thread>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1700188489 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesjugar.cpp
+	<iostream>
+	<iomanip>
+	<cstdio>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1699652533 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesmenu.cpp
+	<iostream>
+	<locale>
+	<stdio.h>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1700188472 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionespuntaje.cpp
+	<iostream>
+	<locale>
+	<iomanip>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1699409984 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesrandom.cpp
+	"funciones.h"
+	"estructuras.h"
+
+1699621592 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesunderthegun.cpp
+	<iostream>
+	"funciones.h"
+	"estructuras.h"
+
+1699621592 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\main.cpp
+	<iostream>
+	<locale>
+	<cstdlib>
+	<ctime>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+

@@ -16,7 +16,7 @@ void mostrarMenu(Jugador &j1, Jugador &j2, bool &banderaUltimoGanador)
 
     do
     {
-        cout << endl << "CLUTCH " << endl; //Usamos el UNICODE
+        cout << endl << "CLUTCH " << endl;
         cout << "--------------------" << endl;
         cout << "1 - JUGAR" << endl;
         cout << "2 - ESTADISTICAS" << endl;
@@ -30,7 +30,7 @@ void mostrarMenu(Jugador &j1, Jugador &j2, bool &banderaUltimoGanador)
         {
             cout << "ERROR: " << opcion << " no es un numero valido. Presione una tecla para continuar...." << endl;
             rlutil::anykey();
-            rlutil::cls();//Borra pantalla para ver el fondo verde
+            rlutil::cls();//Borra pantalla para ver el fondo
         }
         else
         {
@@ -68,16 +68,16 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
         mostrarCartasDeJugadores(j1,j2);
 
  /// Para pruebas
-//        j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
-//        j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "A";
+     //  j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "K", j1.corral[3].valor = "K", j1.corral[4].valor = "K";
+    //   j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "A", j2.corral[3].valor = "Q", j2.corral[4].valor = "A";
 
 
         //Valida que no haya escalera
         while(straightHand(j1, j2))
         {
-            cin.ignore(); // Limpiar el buffer de entrada de cualquier caracter pendiente, incluyendo el caracter de nueva l�nea
+            cin.ignore(); // Limpiar el buffer de entrada de cualquier caracter pendiente, incluyendo el caracter de nueva línea
             cout << "OPS SALIO ESCALERA! VOLVEREMOS A REPARTIR...";
-            cout << "Mezclando mazo, presione enter para continuar....";
+            cout << "Mezclando mazo, presione enter para continuar...";
             getchar(); // Espera a que se presione una tecla
 
             //resetear mazo inicial y volver a repartir cartas
@@ -96,9 +96,9 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
         int starter = clutchStarter(j1, j2);
         while(starter == 0)
         {
-            cin.ignore(); // Limpiar el b�fer de entrada de cualquier car�cter pendiente, incluyendo el car�cter de nueva l�nea
-            cout << "*****OPS SALIO EMPATE...*****" << endl;
-            cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO, presione enter para continuar....";
+            cin.ignore();  // Limpiar el buffer de entrada de cualquier caracter pendiente, incluyendo el caracter de nueva línea
+            cout << "***** OPS SALIO EMPATE...*****" << endl;
+            cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO, presione enter para continuar...";
             getchar(); // Espera a que se presione una tecla
             resetearMazo(vMazo);
             mezclarMazo(vMazo);
@@ -108,10 +108,9 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
         }
 
         cout << "-> El jugador que inicia es: " << ((starter == 1) ? j1.nombre : j2.nombre) << " <-" << endl << endl;
-        cout << "Presione una tecla cualquiera cuando est� listo para iniciar el juego.";
+        cout << "Presione una tecla cualquiera cuando estes listo para iniciar el juego.";
         rlutil::anykey();
-        rlutil::cls();//Borra pantalla para ver el fondo verde
-
+        rlutil::cls();//Borra pantalla
         ganador = juegoInsitu(j1, j2, starter, vMazo);
 
         if(!banderaUltimoGanador)
@@ -119,7 +118,7 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
             ganadorMaximo = ganador;
             banderaUltimoGanador  = true;
         }
-        else if(ganador.puntajeHistorico > ganadorMaximo.puntajeHistorico)
+        else if(ganador.puntajeHistorico >= ganadorMaximo.puntajeHistorico)
         {
             ganadorMaximo = ganador;
         }
@@ -129,7 +128,6 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
 
     case 2: //estadisticas
     {
-
         mostrarHito(ganadorMaximo);
 
         break;
