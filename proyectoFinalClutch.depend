@@ -208,7 +208,7 @@
 	"funciones.h"
 	"estructuras.h"
 
-1700188489 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesjugar.cpp
+1700188557 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesjugar.cpp
 	<iostream>
 	<iomanip>
 	<cstdio>
@@ -216,7 +216,7 @@
 	"funciones.h"
 	"estructuras.h"
 
-1699652533 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesmenu.cpp
+1700188557 source:d:\utn\01 - primer cuatrimestre\laboratorio1 ejercicios\proyectofinalcodeblocks\utn_proyectolab1-dev-update\funcionesmenu.cpp
 	<iostream>
 	<locale>
 	<stdio.h>
