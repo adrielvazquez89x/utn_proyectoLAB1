@@ -24,4 +24,4 @@ El proyecto está organizado en varios archivos que incluyen módulos para la l�
 
 Podes ver una demo en el siguiente video:
 
-https://youtu.be/DeOknUoSRrg?si=R4xrzCgNz0QV0TQB
+https://www.youtube.com/watch?v=_RjMd1-oCW8
