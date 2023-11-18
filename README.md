@@ -11,6 +11,7 @@ Consiste en un juego de consola desarrollado en C++. Se utilizaron las librería
 ## Desarrolladores
 
 - Miguel Angel Lardo
+- Analía Belén Leyez
 - Adriel Alejandro Vazquez
 
 ## Descripción de Funcionalidades
